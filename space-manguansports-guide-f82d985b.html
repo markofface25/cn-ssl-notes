@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>满冠体育 · 空间与运动场地的简明索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f6f0;
+            font-family: 'Georgia', 'Noto Serif SC', 'Source Han Serif SC', serif;
+            color: #3d3a35;
+            line-height: 1.75;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 740px;
+            width: 100%;
+            background-color: #fffcf7;
+            padding: 2.8rem 2.2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.3s ease;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem;
+                border-radius: 8px;
+            }
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 2.2rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
+            color: #2d2a27;
+            border-left: 4px solid #b7a48b;
+            padding-left: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7a7268;
+            margin: 0.2rem 0 1.6rem 1.5rem;
+            font-style: italic;
+            border-bottom: 1px solid #e6dfd4;
+            padding-bottom: 0.6rem;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            margin-bottom: 1.8rem;
+            padding: 0.4rem 0 0.8rem 0;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            color: #4a443e;
+        }
+
+        .content-section {
+            margin: 1.8rem 0;
+        }
+
+        .content-section h2 {
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin: 1.6rem 0 0.6rem 0;
+            color: #4e4640;
+            border-bottom: 1px dashed #d5cdc0;
+            padding-bottom: 0.2rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .quote-box {
+            background-color: #f3efe8;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 5px solid #a48e78;
+            border-radius: 0 8px 8px 0;
+            font-style: normal;
+            color: #3d352c;
+            box-shadow: inset 0 0 0 1px #ece4d9;
+            font-size: 0.97rem;
+        }
+
+        .quote-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .quote-box .attribution {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: #7d7569;
+            text-align: right;
+            border-top: 1px solid #dad0c2;
+            padding-top: 0.4rem;
+        }
+
+        .faq-summary {
+            margin: 2rem 0 1rem;
+            background: #f9f4ed;
+            padding: 1.2rem 1.6rem;
+            border-radius: 10px;
+        }
+
+        .faq-summary h3 {
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #4f463d;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-summary h3::before {
+            content: "▹";
+            color: #a48e78;
+            font-size: 1.3rem;
+        }
+
+        .faq-summary ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .faq-summary li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.6rem;
+            border-left: 2px solid #d4c8b8;
+            padding-left: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-summary li strong {
+            font-weight: 500;
+            color: #4a4139;
+        }
+
+        .visit-line {
+            text-align: center;
+            margin: 2.8rem 0 0.8rem;
+            padding: 1.2rem 0.6rem;
+            border-top: 1px solid #e2d9cc;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .visit-line a {
+            color: #6b5b4b;
+            text-decoration: none;
+            border-bottom: 1px solid #c6b8a6;
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+
+        .visit-line a:hover {
+            color: #4f3f2e;
+            border-bottom-color: #7b6853;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #9b9185;
+            border-top: 1px dotted #dfd6c9;
+            padding-top: 1.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        .highlight {
+            background: #f0e9df;
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .separator-dot {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: #cbbfb0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>满冠体育</h1>
+        <div class="subhead">一个指向运动空间的简明索引</div>
+
+        <div class="intro">
+            <p class="lead">初次打开这个网站的人，多半会先问一句：<br>“这里到底是做什么的？”</p>
+            <p>答案其实很简单。它不贩卖课程，不兜售器材，也没有复杂的会员体系。它只做一件事：<span class="highlight">把与运动场地、空间、场馆相关的信息，用相对干净的方式整理在一起</span>。你可以把它理解成一张经过筛选的导航页，指向那些真正能运动、可预约、有明确位置的线下场所。</p>
+        </div>
+
+        <div class="content-section">
+            <h2>为什么需要这样一个页面？</h2>
+            <p>常去打球或锻炼的人都有体会：找场地往往比运动本身更费神。社交媒体里的信息七零八落，地图App上的标注时常过时，电话打过去要么已搬迁要么不对外开放。而<a href="https://space-manguansports.com">满冠体育</a>的出发点，就是试着把这一层筛选成本降下来——至少让你在点进来之后，能更快确认这个地方是否与你有关。</p>
+            <p>它的内容偏重实用性。每个收录的场馆或空间，都附带基本的定位描述、场地类型与开放条件。没有堆砌的营销话术，也没有故弄玄虚的包装。你看到的就是它实际提供的东西。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>“很多时候我们缺的不是运动的意愿，而是那个‘到底去哪儿’的答案。”<br>—— 一位经常在周末找球场的用户留言</p>
+            <div class="attribution">引自站内用户反馈摘录</div>
+        </div>
+
+        <div class="content-section">
+            <h2>你可以在这里找到什么？</h2>
+            <p>举几个常见的例子：<br>
+            如果你在计划一场羽毛球活动，页面里可能会列出几个经过核实的场馆，附带大致的位置片区和预约方式；如果你在寻找户外跑步或篮球的公共空间，也有对应的分类提示。整个索引的结构偏向<span class="highlight">按运动类型 + 区域</span>划分，不堆砌无关信息。</p>
+            <p>当然，一个人的整理总有遗漏。所以页面也留了反馈的途径——如果你发现某个场地信息有变化，或者有好的场地推荐，可以通过站内提示联系更新。这也是它保持相对可靠的方式之一。</p>
+        </div>
+
+        <div class="faq-summary">
+            <h3>FAQ 摘要 —— 几个常见疑问</h3>
+            <ul>
+                <li><strong>信息多久更新一次？</strong> 视反馈频率而定，通常按月核验主要场地状态。</li>
+                <li><strong>收录场地是否需要付费？</strong> 不收费，也不接受付费推荐，只基于公开信息与用户验证。</li>
+                <li><strong>为什么没有显示某个知名场馆？</strong> 可能因为信息尚未核实，或该场地暂不对外开放。</li>
+                <li><strong>可以直接在这里预订场地吗？</strong> 本站只提供索引与指引，预订需通过各场地自身的渠道。</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <p>说到底，<a href="https://space-manguansports.com">满冠体育</a>更像一个安静的路牌。它不替你做决定，但希望你在需要运动空间的时候，能少绕一点弯路。如果你恰好也在找这样的索引，不妨花几分钟浏览一下——说不定正好有你常去的那片场地。</p>
+        </div>
+
+        <div class="visit-line">
+            <span>了解场地索引，可前往</span>
+            <a href="https://space-manguansports.com">满冠体育</a>
+            <span class="separator-dot">·</span>
+            <span>按区域与类型浏览</span>
+        </div>
+
+        <div class="footer-note">
+            保持简洁 · 保持真实 · 为运动节省一点找路的时间
+        </div>
+    </div>
+</body>
+</html>
