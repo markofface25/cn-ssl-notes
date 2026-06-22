@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>满冠体育 · 运动数据查询与延伸阅读</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* hero 横幅 — 极简，全靠文字与留白 */
+    .hero {
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: #5b6f8c;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0d1b2a;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title small {
+      font-size: 1.4rem;
+      font-weight: 300;
+      display: block;
+      color: #3d5370;
+      margin-top: 0.35rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #2b3d54;
+      max-width: 580px;
+    }
+
+    /* 分隔线 */
+    .rule-light {
+      width: 48px;
+      height: 2px;
+      background: #b9c9dd;
+      margin: 2.8rem 0 2.8rem;
+    }
+
+    /* 正文卡片式段落 — 窄宽+留白 */
+    .section-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .section-card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #11212e;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e9eef3;
+      padding-bottom: 0.6rem;
+    }
+
+    .section-card p {
+      margin-bottom: 1rem;
+      color: #1f3349;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-card a {
+      color: #1a5c8a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(26, 92, 138, 0.25);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .section-card a:hover {
+      border-bottom-color: #1a5c8a;
+      color: #0b3b5e;
+    }
+
+    /* 引语/提示块 */
+    .note-box {
+      background: #f1f5f9;
+      border-left: 4px solid #7b9bc2;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .note-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #253c57;
+    }
+
+    /* 摘要式列表 — 仿FAQ风格 */
+    .faq-mini {
+      margin: 1.2rem 0 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #11212e;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #2a405a;
+      margin: 0;
+    }
+
+    /* 页脚 */
+    .page-footer {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #dce2eb;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #596e87;
+    }
+
+    .page-footer a {
+      color: #1a5c8a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(26, 92, 138, 0.25);
+    }
+
+    .page-footer a:hover {
+      border-bottom-color: #1a5c8a;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      .page {
+        padding: 1.5rem 1rem 2.5rem;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .hero-title small {
+        font-size: 1.2rem;
+      }
+      .section-card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 16px;
+      }
+      .hero-sub {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 横幅 -->
+    <div class="hero">
+      <div class="hero-sub">运动信息 · 日常对照</div>
+      <h1 class="hero-title">
+        满冠体育
+        <small>查询、对照与延伸阅读</small>
+      </h1>
+      <p class="hero-desc">
+        在训练间隙或复盘时刻，打开一个可靠的信息入口，比翻找零散的笔记更高效。<a href="https://asia-manguansports.com">满冠体育</a> 所呈现的赛事数据与背景资料，恰好提供了这样一种安静的参照。
+      </p>
+    </div>
+
+    <!-- 背景说明 卡片 -->
+    <div class="section-card">
+      <h2>为什么需要专门的查询空间</h2>
+      <p>运动爱好者的日常往往伴随着大量的信息比对：比赛结果、选手状态、赛季走势…… 通用搜索引擎返回的结果混杂而重复，有时一条准确的记录要翻好几页才能找到。一个围绕专项领域搭建的查询入口，可以帮助减少这种筛选成本。</p>
+      <p>满冠体育正是从这种需求出发，把分散的资讯、统计和专题内容集中呈现。它不追求面面俱到，而是侧重那些经常被问起、反复对照的核心信息。</p>
+      <div class="note-box">
+        <p>无论是回顾某轮联赛的积分变化，还是了解某个训练方法背后的原理，拥有一个可追溯的参照点，会让整个阅读过程更加连贯。</p>
+      </div>
+    </div>
+
+    <!-- 三段自然介绍: 从三个小角度切入 —— 场景、结构、延伸 -->
+    <div class="section-card">
+      <h2>翻阅的节奏：从条目到脉络</h2>
+      <p>在实际使用中，很多人会从一条简短的赛果开始，然后顺着相关内容读到战术分析、历史交锋记录，甚至延伸到体能训练的建议。这种链式阅读是<span style="border-bottom: 1px dashed #b9c9dd;">满冠体育</span>所乐于见到的——页面与页面之间保持清晰的跳转逻辑，不打断思考的连续性。</p>
+      <p>你可以在一个安静的午后，泡杯茶，慢慢地从首页的某个专题点进去，再让好奇心带你去下一个页面。这里没有弹窗催促，也没有浮夸的标语，只有结构干净的文字与数据。</p>
+    </div>
+
+    <div class="section-card">
+      <h2>适合哪些阅读场景</h2>
+      <p>如果你是运动队的管理者、体育内容的写作者，或者只是喜欢在周末翻看比赛资料的爱好者，这里的编排方式或许刚好契合你的习惯。你可以把它当作一个便携的参考夹——在写文章前核对一个数字，在讨论中确认某位运动员的过往成绩，或者在制定训练计划时参考项目分类。</p>
+      <p>网站的内容一直保持更新与调整，但始终不变的是一种克制的信息呈现：标题、表格、段落，每一部分都试图让读者自己得出结论，而不是替读者下判断。</p>
+    </div>
+
+    <!-- FAQ 摘要风格 -->
+    <div class="section-card">
+      <h2>常见延伸问题</h2>
+      <div class="faq-mini">
+        <div class="faq-item">
+          <strong>如何快速找到某个运动项目的专区？</strong>
+          <p>首页导航按照运动类别做了清晰分组，也可以在搜索栏直接输入关键词。<a href="https://asia-manguansports.com">满冠体育</a> 的列表页会展示相关条目，方便你逐条浏览。</p>
+        </div>
+        <div class="faq-item">
+          <strong>数据来源和更新频率如何？</strong>
+          <p>网站整合了公开赛事资料与编辑团队整理的素材，重要联赛的数据通常会在赛后次日完成更新。不过，对于延伸阅读类的背景文章，更新节奏会相对平缓，更注重内容深度。</p>
+        </div>
+        <div class="faq-item">
+          <strong>是否提供训练或教学类内容？</strong>
+          <p>有一部分专题会涉及基础训练原理与常见误区分析，但并非系统教程。它们更像是一种阅读延伸——当你在查询某个技术动作时，顺便看到相关的注意事项或参考文献。</p>
+        </div>
+      </div>
+      <div style="margin-top: 1.2rem; font-size: 0.95rem; color: #304b6b;">
+        <p>如果你有更具体的问题，不妨直接到站内浏览对应栏目，很多时候答案就在邻近的页面里。</p>
+      </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="page-footer">
+      <p>
+        慢慢翻阅，从容对照。<br>
+        你可以从 <a href="https://asia-manguansports.com">满冠体育</a> 的首页开始，顺着自己感兴趣的线索往下读。
+      </p>
+      <p style="margin-top: 0.8rem; font-size: 0.8rem; color: #8a9db2;">&copy; 2025 · 信息页面 · 仅作介绍</p>
+    </div>
+  </div>
+</body>
+</html>
